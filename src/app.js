@@ -9,23 +9,24 @@ const App = React.createClass({
     };
   },
 
+
+  addUser() {
+    var newUsers = this.state.users;
+    newUsers.push("Larry");
+    this.setState({users: newUsers});
+  },
+
   users() {
     return this.state.users.map((user, i) => {
       return <Person key={i} name={user} />;
     });
   },
 
-  addUser() {
-    var users = this.state.users;
-    users.push("Larry");
-    this.setState({users: users});
-  },
-
   render() {
     return (
       <div>
         <ul>{this.users()}</ul>
-        <button type="button" onClick={this.addUser}>Add</button>
+        <button type="button" onClick={this.addUser}>Add User</button>
       </div>
     );
   }
