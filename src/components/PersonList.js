@@ -1,12 +1,19 @@
 import React from 'react';
 import Person from './Person.js';
+import API from '../api.js';
 
 export default React.createClass({
   getInitialState() {
     return {
-      users: ["Bob", "Fred"],
+      users: ["bob", "fred"],
       newUser: ""
     };
+  },
+
+  componentDidMount() {
+    API.getUsers(newUsers => {
+      this.setState({users: newUsers});
+    });
   },
 
   updateName(e) {
