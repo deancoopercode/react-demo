@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { IndexLink, Link } from 'react-router';
 
 export default React.createClass({
   render() {
     return (
       <main>
-        <h1>React Demo</h1>
+        <h1><IndexLink to="/">React Demo</IndexLink></h1>
         <nav>
           <Link to='/about'>About</Link>&nbsp;|&nbsp;
           <Link to='/users'>Users</Link>
