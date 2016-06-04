@@ -14,8 +14,7 @@ export default React.createClass({
   },
 
   addUser() {
-    var newUsers = this.state.users;
-    newUsers.push(this.state.newUser);
+    var newUsers = this.state.users.concat(this.state.newUser);
     this.setState({users: newUsers, newUser: ""});
   },
 
